@@ -66,6 +66,25 @@ class MyArray:
 
         return None
 
+    def find_mode(self):
+        dicio = {}
+
+        for elem in self.array:
+            if elem in dicio:
+                dicio[elem] += 1
+            else: 
+                dicio[elem] = 1
+
+        map_list = [(key, value) for key, value in dicio.items()]
+
+        max_key, max_value = map_list[0]
+
+        for key, value in map_list:
+            if value > max_value:
+                max_key = key
+                max_value = value
+            
+        return max_key, max_value
 
 class MyStack:
 
